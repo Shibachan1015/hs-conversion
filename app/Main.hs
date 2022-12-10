@@ -1,37 +1,38 @@
 module Main (main) where
 
+
 import Lib(calcCtoF, calcFtoC)
 
 
-
+main :: IO ()
 main = do
-  -- currentTemperture <- getLine
-  firstCall
+  chooseNumber 1
 
 
-
-chooseNumber number =
-  case number of
-    1 -> convertCtoF number
-    2 -> convertFtoC number
-    0 -> putStrLn "process exit" {- TODO search How to std process exit-}
-    -- TODO otherwise number
-
--- print calcCtoF currentTemperture
--- print calcFtoC currentTemperture
+chooseNumber :: a10 -> a10
+chooseNumber n | n == 0 = throghFunc n
+               | n == 1 = convertCtoF n
+               | n == 2 = convertFtoC n
+               | otherwise = throghFunc n
 
 
+-- 0 -> "proess exit"
+-- TODO search How to std process exit
+
+
+firstCall :: IO ()
 firstCall = do
-  print  "///////////////////////////////\n"
-  print  "///   C° -> F° => input 1   ///\n"
-  print  "///   F° -> C° => input 2   ///\n"
-  print  "///   exit this program     ///\n"
-  print  "///////////////////////////////\n"
+  print  " C° -> F° => input 1 "
+  print  " F° -> C° => input 2 "
+  print  " exit this program => input 0 "
 
 
-convertCtoF :: Int -> Int
-convertCtoF = undefined
+throghFunc :: a -> a
+throghFunc x = x
 
-convertFtoC :: Int -> Int
-convertFtoC = undefined
 
+convertCtoF :: p1 -> a1
+convertCtoF n = undefined
+
+convertFtoC :: p0 -> a0
+convertFtoC n = undefined
